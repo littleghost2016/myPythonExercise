@@ -1,0 +1,755 @@
+@charset "UTF-8"
+
+$babyBlue : #65b2f1
+$navyBlue : #3590de
+$bookBG   : #88caff
+$bookColor: #1d3040
+
+/* ================================================================== */
+/*    1// Default/RestCss*/
+/* ================================================================== */
+
+*
+  margin          : 0
+  padding         : 0
+  font-size       : 100%
+  border          : 0
+  vertical-align  : baseline
+  outline         : 0
+p 
+  margin          : 0
+  padding         : 0
+
+li 
+  list-style-type : none
+
+a 
+  color: #333
+  text-decoration : none
+
+html 
+  height          : 100% !important
+  text-overflow   : ellipsis
+
+body 
+  position         : relative
+  font-size        : 14px
+  color            : #FFF
+  background-color : white
+  height           : 100%
+  font-family      : "Microsoft YaHei", Arial, sans-serif
+  min-width        : 1000px
+  overflow         : auto
+
+.wrap 
+  width        : 100%
+  height       : 100%
+  background   : red
+  
+
+.wrap1000,.wrap890
+  // overflow: hidden
+  width        : 1000px
+  margin-left  : auto
+  margin-right : auto
+  position     : relative
+.wrap890
+  width        : 890px
+
+header
+  background   : $babyBlue
+  height       : 65px
+  position     : relative
+  z-index      : 10
+  overflow     : hidden
+
+section
+  // height       : 2000px
+
+footer
+  height       : 110px
+  background   : white
+
+::selection 
+  // background: #fa4659
+  background: $bookBG
+  color: #FFF
+
+::-moz-placeholder
+  color: #E8E4E4
+
+::-ms-input-placeholder
+  color: #E8E4E4
+
+::-webkit-input-placeholder
+  color: #E8E4E4
+
+.full-pic
+  background-image      : url('../img/background.png')
+  background-repeat     : no-repeat
+  background-position   : 0 0
+  background-size       : cover
+  position              : fixed
+  width                 : 100%
+  height                : 100%
+  z-index               : -1
+  background-attachment : fixed
+
+label
+  cursor                : pointer
+
+
+
+
+/* ================================================================== */
+/*    2// Header*
+/* ================================================================== */
+.logo
+  display : inline-block
+
+  /* ================================================================ */
+  /*    2.1// Logo
+  /* ================================================================ */
+  a
+    color               : white
+    display             : inline-block
+    font-size           : 20px 
+    line-height         : 65px
+    padding-left        : 58px
+    vertical-align      : middle
+    background-image    : url('../img/head_logo.png')
+    background-repeat   : no-repeat
+    background-position : 0 center
+  
+  /* ================================================================ */
+  /*    2.2// Nav
+  /* ================================================================ */
+.nav
+  margin-left : 80px
+  
+.logo, .nav
+  float       : left
+
+.nav-list li
+  float       : left
+  height      : 65px
+  margin      : 0 12px
+  padding     : 0 12px
+  position    : relative
+  line-height : 65px
+
+  a
+    color              : white
+    z-index            : 1
+    position           : relative
+    font-size          : 1.2em
+    vertical-align     : middle
+
+    &:hover
+      color            : $navyBlue
+      
+    &:hover:after
+      color            : $babyBlue
+      width            : 63px
+      transition       : all 0.2s linear
+      background-color : white
+      border-top-left-radius    : 10px
+      border-bottom-left-radius : 10px
+
+    &:hover:before
+      width            : 63px
+      transition       : all 0.2s linear
+      background-color : white
+      border-top-right-radius    : 10px
+      border-bottom-right-radius : 10px
+
+    &:after,&:before
+      top              : -7px
+      width            : 59px
+      height           : 38px
+      content          : ""
+      z-index          : 0
+      display          : inline-block
+      position         : absolute
+      transition       : all 0.3s linear
+      background       : #88caff
+
+    &:before
+      left             : -9px
+      border-radius    : 8px 0 0 8px
+      transform        : perspective(120px) rotateY(33deg)
+    &:after
+      right            : -8px
+      transform        : perspective(120px) rotateY(-33deg)
+      border-radius    : 0 8px 8px 0
+
+    & span
+      position: relative
+      z-index: 5
+
+
+  /* ================================================================ */
+  /*    2.3// Search
+  /* ================================================================ */
+.search
+  float               : right
+  width               : 216px
+  height              : 65px
+  position            : relative
+  padding-top         : 0px
+
+  form
+    position          : relative
+
+    i
+      right           : 188px
+      color           : white
+      bottom          : -50px
+      position        : absolute
+      font-size       : 30px
+      transform       : rotateY(180deg)
+
+    .icon-sear
+      animation       : icon-search-animate 0.9s ease-in-out forwards
+      animation-delay : 0.4s
+
+  .search-inp
+    float           : left
+    color           : white
+    width           : 0
+    height          : 50px
+    padding         : 0
+    font-size       : 18px
+    text-align      : center
+    background      : rgba(0, 0, 0, 0)
+    // line-height: 28px
+    margin-right    : 36px
+    border-bottom   : 1px solid white
+
+  .we-on
+    animation: search-on-in 1s ease-in-out forwards
+    animation-delay : 0.5s
+
+
+
+@keyframes search-on-in
+  0%
+    width     : 0
+    padding   : 0
+  100%
+    width     : 160px
+    height    : 20px
+    padding   : 25px 10px 5px 10px
+
+@keyframes icon-search-animate
+  0%
+    right     : 188px
+    bottom    : -50px
+  70%
+    right     : 90px
+    bottom    : -50px
+    transform : rotateY(90deg)
+  100%
+    right     : 0
+    bottom    : -50px
+    font-size : 30px
+    transform : rotateY(0deg)
+
+
+
+/* ================================================================== */
+/*    3// Main
+/* ================================================================== */
+.hot-section
+  padding                 : 50px 0
+
+  .hot-shadow
+    top                   : 50px
+    left                  : 0
+    width                 : 176px
+    height                : 176px
+    margin                : -10px 0 0 -10px
+    overflow              : hidden
+    position              : absolute
+
+    .hot-title
+      color               : #de5858
+      width               : 250px
+      height              : 84px
+      margin              : 17px 0 0 -68px
+      z-index             : 2
+      font-size           : 36px
+      transform           : rotate(-45deg)
+      text-align          : center
+      line-height         : 84px
+      background-color    : #bee0ff
+    
+    &:before,&:after
+      width               : 10px
+      height              : 10px
+      bottom              : 0px
+      display             : block
+      content             : " "
+      position            : absolute
+      background-color    : #7189aa
+      z-index             : -1
+    &:before
+      left                : 0px
+      bottom              : 0px
+    &:after
+      right               : 0
+      top                 : 0
+
+
+
+  /* ================================================================ */
+  /*    3.1// Hot Section                                             */
+  /* ================================================================ */
+.hot-content
+  // height                 : 1800px
+  padding                : 0 10px
+  background             : -moz-linear-gradient(top, #3690de 200px, #fff 800px)
+  background             : -webkit-gradient(linear,0 0, 100% 100%, from(#3690de), to(#fff))
+  background             : -webkit-linear-gradient(top, #3690de 200px, #fff 800px)
+  background             : -o-linear-gradient(top, #3690de 200px, #fff 800px)
+  padding-top            : 88px
+  padding-bottom         : 50px
+  background-color       : white
+  border-top-left-radius : 80px
+
+
+.hot-content
+  // height                 : 1800px
+  padding                : 0 10px
+  background-color       : white
+  background             : -moz-linear-gradient(top, #3690de 200px, #fff 800px)
+  background             : -webkit-gradient(linear,0 0, 100% 100%, from(#3690de), to(#fff))
+  background             : -webkit-linear-gradient(top, #3690de 200px, #fff 800px)
+  background             : -o-linear-gradient(top, #3690de 200px, #fff 800px)
+  padding-top            : 88px
+  border-top-left-radius : 80px
+  .banner
+    width                : 748px
+    margin               : auto
+    height               : 300px
+    z-index              : 2
+    position             : relative
+    overflow             : hidden
+
+    .banner-imgs
+      width              : 748px
+      height             : 300px
+      overflow           : hidden
+      li
+        display          : list-item
+        // transform       : translateY(-100%)
+        z-index          : 1
+        position         : absolute
+        transform        : translateY(-10px)
+
+        a img
+          vertical-align : middle
+
+    .control-page a
+      top                : 50%
+      color              : white
+      width              : 50px
+      height             : 72px
+      // display            : none
+      opacity            : 0
+      z-index            : 10
+      position           : absolute
+      font-size          : 42px
+      margin-top         : -36px
+      text-align         : center
+      transition         : all 0.3s linear
+      background         : rgba(0, 0, 0, 0.5)
+      line-height        : 72px
+
+      &:first-child
+        left             : 0
+        text-indent      : -8px
+
+      &:last-child
+        right            : 0
+
+    .banner-btn
+      top                : 60px
+      right              : -30px
+      position           : absolute
+
+      li
+        width            : 18px
+        cursor           : pointer
+        margin           : 15px 0
+        height           : 18px
+        background       : rgba(0, 0, 0, 0.8)
+        border-radius    : 50%
+
+      .banner-btn-on
+        background       : white
+
+    &:hover .control-page a
+      opacity            : 1
+
+  & div:last-child .book-list:last-child
+    border-bottom        : 0
+
+
+
+
+  /* ================================================================ */
+  /*    3.2// Recommend                                               */
+  /* ================================================================ */
+
+.figure
+  left               : 50%
+  width              : 325px
+  // right              : -35px
+  height             : 510px
+  bottom             : 0
+  z-index            : -1
+  opacity            : 0.8
+  position           : fixed
+  margin-left        : 400px
+  background-size    : 130%
+  background-image   : url('../img/hero2.png')
+  background-position: 0 0
+  transform          : translateX(125px)
+  &.anim
+    opacity          : 1
+    transition       : all 1s linear
+    transform        : translateX(0)
+.hot-list
+  width              : 748px
+  margin             : auto
+  overflow           : hidden
+
+  li
+    float            : left
+    width            : 187px
+    height           : 187px
+    position         : relative
+    background-color : rgba(255, 255, 255, 0.6)
+
+    a
+      width          : 187px
+      height         : 187px
+      display        : block
+
+      &:hover p
+        height           : 187px
+        transition       : all 0.2s linear
+        background       : rgba(0, 0, 0, 0.86)
+        .author,.book-description
+          display        : block
+          padding        : 0 10px 0 10px
+          max-width      : 167px
+          text-align     : center
+        .book-description
+          height         : 55px
+          display        : -webkit-box
+          padding        : 10px
+          overflow       : hidden
+          font-size      : 8px
+          text-align     : left
+          text-indent    : 2em
+          line-height    : 16px
+          font-weight    : normal
+          vertical-align : middle
+          text-overflow  : ellipsis
+          -webkit-line-clamp: 5
+          -webkit-box-orient: vertical
+
+
+        b
+          display    : block
+          font-size  : 22px
+          padding    : 0 10px 0 10px
+          padding-top: 30px
+
+      &:hover div
+        animation    : bookRotate 300ms ease-in-out forwards
+        transition   : all 0.35s linear
+
+
+
+
+    @for $i from 1 through 4
+      &:nth-child(#{$i})
+        @if $i == 2 or $i == 4
+          background : rgba(255, 255, 255, 0.3)
+    div
+      width          : 52px
+      height         : 87px
+      margin         : 36px 0 0 62px
+      display        : inline-block
+      position       : relative
+      transform      : perspective(60px) rotateY(-10deg)
+      transition     : all 0.2s linear
+      vertical-align : middle
+
+      img
+        width        : 52px
+        height       : 87px
+        z-index      : 2
+        position     : relative
+
+      &:before
+        right        : 0px
+        width        : 1px
+        height       : 87px
+        z-index      : 3
+        content      : " "
+        position     : absolute
+        background   : rgba(220, 220, 220, 0.2)
+
+      span
+        left         : 0
+        width        : 20px
+        bottom       : -1px
+        height       : 10px
+        z-index      : 1
+        position     : absolute
+        transform    : perspective(70px) rotateX(-64deg) rotateY(0deg)
+        box-shadow   : 35px 0 5px 5px #636363
+
+      &:after
+        top          : 2px
+        left         : 100%
+        width        : 13%
+        height       : 84px
+        content      : " "
+        z-index      : 4
+        position     : absolute
+        transform    : perspective(65px) rotateX(0deg) rotateY(35deg)
+        background   : #e5e5e5
+        box-shadow   : inset 0 0 4px #333
+
+    p
+      color          : white
+      width          : 100%
+      height         : 30px
+      bottom         : 0
+      position       : absolute
+      font-size      : 14px
+      text-align     : center
+      background     : black
+      transition     : all 0.2s linear
+      line-height    : 30px
+      font-weight    : bold
+
+      .author,.book-description
+        display        : none
+
+      .author
+        overflow       : hidden
+        font-size      : 10px
+        max-width      : 75px
+        font-weight    : normal
+        white-space    : nowrap
+        text-overflow  : ellipsis
+        vertical-align : middle
+
+
+
+
+  /* ================================================================ */
+  /*    3.3// xuanhuan                                                */
+  /* ================================================================ */
+.xuanhuan-title
+  color                : #1d3040
+  margin               : auto
+  padding              : 30px 0px 6px 10px
+  position             : relative
+  font-size            : 32px
+  font-weight          : bold
+  border-bottom        : 3px solid #152535
+
+  span
+    float              : left
+
+  span.more
+    float              : right
+    right              : 10px
+    bottom             : 5px
+    position           : absolute
+    font-size          : 14px
+    margin-top         : 2px
+    letter-spacing     : -2px
+    vertical-align     : middle
+
+    a
+      color            : $bookColor
+
+      &:hover
+        color          : $babyBlue
+
+  p
+    height             : 14px
+    display            : table
+    font-size          : 14px
+    line-height        : 14px
+
+  .txt
+    padding-top        : 9px
+
+.book-list
+  width                : 915px
+  overflow             : hidden
+  margin-left          : -15px
+
+  li
+    float              : left
+    border-bottom      : 1px solid $bookColor
+    
+    &:only-of-type,&:last-child:not(:first-child),&:nth-last-child(2):not(:nth-child(even))
+      border           : 0
+
+    &:first-child:not(:last-child)
+
+    // &:first-child,&:first-child+li
+    //   border           : 0
+
+    // &:last-child:not(:first-child)
+    //   padding-left     : 40px
+
+.book
+  width                : 425px
+  padding              : 25px 16px 25px
+
+  .cover
+    float              : left
+    width              : 136px
+    height             : 180px
+    overflow           : hidden
+    margin-right       : 10px
+
+    &:hover img
+      transform        : scale(1.18)
+
+    img
+      transition       : all 0.3s linear
+      vertical-align   : middle
+
+
+
+
+.book-presentation
+  color                : #1d3040
+  height               : 180px
+  position             : relative
+  margin-left          : 146px
+  padding-right        : 10px
+
+  h2
+    font-size          : 24px
+    padding-top        : 5px
+
+    a,.book-author a
+      display          : inline-block
+      overflow         : hidden
+      max-width        : 280px
+      white-space      : nowrap
+      text-overflow    : ellipsis
+
+    a:hover
+      color            : $babyBlue
+
+  .book-info
+    font-size          : 14px
+    padding-top        : 5px
+
+    i
+      width            : 18px
+      height           : 18px
+      display          : inline-block
+      margin-top       : -3px
+      vertical-align   : middle
+      background-size  : 100% 100%
+      background-image : url('../img/xuanhuan.png')
+      background-repeat: no-repeat
+    span
+      color            : $bookColor + 60
+      height           : 16px
+      display          : inline-block
+      line-height      : 16px
+      font-weight      : bold
+      
+      &:nth-child(2)
+        margin-left    : 0px
+
+    .info-txt
+      margin           : 0 8px 0
+      padding          : 0 10px 0
+      border-left      : 2px solid $bookColor + 60
+      border-right     : 2px solid $bookColor + 60
+
+  .desc
+    font-size          : 14px
+    max-height         : 75px
+    line-height        : 15px
+    padding-top        : 8px
+
+  .book-author
+    padding-top        : 8px
+    
+    a
+      color            : $bookColor + 60
+      display          : block
+
+    a:hover
+      color            : $babyBlue
+
+
+
+
+@keyframes bookRotate
+  0%
+    transform        : perspective(60px) rotateY(-10deg)
+  30%
+    transform        : perspective(0) rotateY(90deg)
+  100%
+    transform        : perspective(60px) rotateY(350deg)
+
+
+
+
+/* ================================================================ */
+/*    4// footer                                                    */
+/* ================================================================ */
+.footer
+
+  .logo-footer
+    float                 : left
+    width                 : 335px
+    position              : relative
+    padding-top           : 22px
+    border-bottom         : 2px solid $bookColor
+
+    img
+      vertical-align      : sub
+
+    .footer-txt
+      color               : $bookColor
+      font-size           : 28px
+      font-family         : "Segoe UI", Arial, "Microsoft Yahei", sans-serif
+
+    .footer-font
+      left                : 10px
+      color               : $bookColor
+      bottom              : -20px
+      position            : absolute
+      letter-spacing      : 3px
+
+  .copy-right
+    width                 : 602px
+    float                 : right
+    color                 : $bookColor
+    padding               : 48px 16px 0 16px
+    font-size             : 10px
+    letter-spacing        : 0
+    font-weight           : bold
+
+    p:last-child
+      font-size           : 12px

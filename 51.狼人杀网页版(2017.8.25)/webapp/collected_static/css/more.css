@@ -1,0 +1,615 @@
+/* ================================================================== */
+/*    1// Default/RestCss */
+/* ================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  border: 0;
+  vertical-align: baseline;
+  outline: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+html {
+  height: 100% !important;
+  text-overflow: ellipsis;
+}
+
+body {
+  position: relative;
+  font-size: 14px;
+  color: #FFF;
+  background-color: white;
+  height: 100%;
+  font-family: "Microsoft YaHei", Arial, sans-serif;
+  min-width: 1000px;
+  overflow: auto;
+}
+
+label {
+  cursor: pointer;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
+.wrap1000, .wrap890 {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.wrap890 {
+  width: 890px;
+}
+
+header {
+  background: #65b2f1;
+  height: 65px;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+footer {
+  height: 110px;
+  background: white;
+}
+
+::selection {
+  background: #88caff;
+  color: #FFF;
+}
+
+::-moz-placeholder {
+  color: #E8E4E4;
+}
+
+::-ms-input-placeholder {
+  color: #E8E4E4;
+}
+
+::-webkit-input-placeholder {
+  color: #E8E4E4;
+}
+
+.full-pic {
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-attachment: fixed;
+}
+
+/* ================================================================== */
+/*    2// Header* */
+/* ================================================================== */
+.logo {
+  display: inline-block;
+  /* ================================================================ */
+  /*    2.1// Logo */
+  /* ================================================================ */
+  /* ================================================================ */
+  /*    2.2// Nav */
+  /* ================================================================ */
+}
+.logo a {
+  color: white;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 65px;
+  padding-left: 58px;
+  vertical-align: middle;
+  background-image: url("../img/head_logo.png");
+  background-repeat: no-repeat;
+  background-position: 0 center;
+}
+
+.nav {
+  margin-left: 80px;
+}
+
+.logo, .nav {
+  float: left;
+}
+
+.nav-list li {
+  float: left;
+  height: 65px;
+  margin: 0 12px;
+  padding: 0 12px;
+  position: relative;
+  line-height: 65px;
+  /* ================================================================ */
+  /*    2.3// Search */
+  /* ================================================================ */
+}
+.nav-list li a {
+  color: white;
+  z-index: 1;
+  position: relative;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+.nav-list li a:hover {
+  color: #3590de;
+}
+.nav-list li a:hover:after {
+  color: #65b2f1;
+  width: 63px;
+  transition: all 0.2s linear;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.nav-list li a:hover:before {
+  width: 63px;
+  transition: all 0.2s linear;
+  background-color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.nav-list li a:after, .nav-list li a:before {
+  top: -7px;
+  width: 59px;
+  height: 38px;
+  content: "";
+  z-index: 0;
+  display: inline-block;
+  position: absolute;
+  transition: all 0.3s linear;
+  background: #88caff;
+}
+.nav-list li a:before {
+  left: -9px;
+  border-radius: 8px 0 0 8px;
+  transform: perspective(120px) rotateY(33deg);
+}
+.nav-list li a:after {
+  right: -8px;
+  transform: perspective(120px) rotateY(-33deg);
+  border-radius: 0 8px 8px 0;
+}
+.nav-list li a span {
+  position: relative;
+  z-index: 5;
+}
+
+.search {
+  float: right;
+  width: 216px;
+  height: 65px;
+  position: relative;
+  padding-top: 0px;
+}
+.search form {
+  position: relative;
+}
+.search form i {
+  right: 188px;
+  color: white;
+  bottom: -50px;
+  position: absolute;
+  font-size: 30px;
+  transform: rotateY(180deg);
+}
+.search form .icon-sear {
+  animation: icon-search-animate 0.9s ease-in-out forwards;
+  animation-delay: 0.4s;
+}
+.search input {
+  float: left;
+  color: white;
+  width: 0;
+  height: 50px;
+  padding: 0;
+  font-size: 18px;
+  text-align: center;
+  background: transparent;
+  margin-right: 36px;
+  border-bottom: 1px solid white;
+}
+.search .we-on {
+  animation: search-on-in 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes search-on-in {
+  0% {
+    width: 0;
+    padding: 0;
+  }
+  100% {
+    width: 160px;
+    height: 20px;
+    padding: 25px 10px 5px 10px;
+  }
+}
+@keyframes icon-search-animate {
+  0% {
+    right: 188px;
+    bottom: -50px;
+  }
+  70% {
+    right: 90px;
+    bottom: -50px;
+    transform: rotateY(90deg);
+  }
+  100% {
+    right: 0;
+    bottom: -50px;
+    font-size: 30px;
+    transform: rotateY(0deg);
+  }
+}
+/* ================================================================== */
+/*    3// Main */
+/* ================================================================== */
+.hot-section {
+  padding: 50px 0;
+  /* ================================================================ */
+  /*    3.1// Hot Section                                             */
+  /* ================================================================ */
+}
+.hot-section .hot-shadow {
+  top: 50px;
+  left: 0;
+  width: 176px;
+  height: 176px;
+  margin: -10px 0 0 -10px;
+  overflow: hidden;
+  position: absolute;
+}
+.hot-section .hot-shadow .hot-title {
+  color: #de5858;
+  width: 250px;
+  height: 84px;
+  margin: 17px 0 0 -68px;
+  z-index: 2;
+  font-size: 36px;
+  transform: rotate(-45deg);
+  text-align: center;
+  line-height: 84px;
+  background-color: #bee0ff;
+}
+.hot-section .hot-shadow:before, .hot-section .hot-shadow:after {
+  width: 10px;
+  height: 10px;
+  bottom: 0px;
+  display: block;
+  content: " ";
+  position: absolute;
+  background-color: #7189aa;
+  z-index: -1;
+}
+.hot-section .hot-shadow:before {
+  left: 0px;
+  bottom: 0px;
+}
+.hot-section .hot-shadow:after {
+  right: 0;
+  top: 0;
+}
+
+.hot-content {
+  padding: 0 10px;
+  background: -moz-linear-gradient(top, #fff 200px, #fff 800px);
+  background: -webkit-gradient(linear, 0 0, 100% 100%, from(#fff), to(#fff));
+  background: -webkit-linear-gradient(top, #fff 200px, #fff 800px);
+  background: -o-linear-gradient(top, #fff 200px, #fff 800px);
+  padding-top: 56px;
+  padding-bottom: 50px;
+  background-color: #fff;
+  /* ================================================================ */
+  /*    3.2// xuanhuan                                                */
+  /* ================================================================ */
+}
+.hot-content div:last-child .book-list:last-child {
+  border-bottom: 0;
+}
+
+.xunhuan-txt {
+  color: #222;
+  font-size: 26px;
+  text-align: center;
+  border-bottom: 2px solid #222;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+}
+
+.xuanhuan-title {
+  color: #1d3040;
+  margin: auto;
+  padding: 30px 0px 6px 10px;
+  position: relative;
+  font-size: 32px;
+  font-weight: bold;
+  border-bottom: 3px solid #152535;
+}
+.xuanhuan-title span {
+  float: left;
+}
+.xuanhuan-title span.more {
+  float: right;
+  right: 10px;
+  bottom: 5px;
+  position: absolute;
+  font-size: 14px;
+  margin-top: 2px;
+  letter-spacing: -2px;
+  vertical-align: middle;
+}
+.xuanhuan-title span.more a {
+  color: #1d3040;
+}
+.xuanhuan-title span.more a:hover {
+  color: #65b2f1;
+}
+.xuanhuan-title p {
+  height: 14px;
+  display: table;
+  font-size: 14px;
+  line-height: 14px;
+}
+.xuanhuan-title .txt {
+  padding-top: 9px;
+}
+
+.book-list {
+  overflow: hidden;
+}
+.book-list dd {
+  float: left;
+}
+
+.book-wrap {
+  transition: all 0.3s ease;
+}
+
+.book-border-bottom {
+  left: 0;
+  width: 0px;
+  height: 1px;
+  bottom: 0;
+  position: absolute;
+  background: #596c7c;
+}
+
+.book {
+  width: 890px;
+  padding: 25px 0;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+.book:hover .book-wrap {
+  transition: all 0.3s ease;
+  transform: translateX(1%);
+  box-shadow: 2px 5px 20px #a9a9a9;
+}
+.book .cover {
+  float: left;
+  width: 102px;
+  height: 136px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.book .cover:hover img {
+  transform: scale(1.18);
+}
+.book .cover img {
+  transition: all 0.3s linear;
+  vertical-align: middle;
+}
+
+.book-presentation {
+  color: #1d3040;
+  height: 136px;
+  position: relative;
+  margin-left: 120px;
+  padding-right: 10px;
+  /* ================================================================ */
+  /*    3.3// Pagin                                                */
+  /* ================================================================ */
+}
+.book-presentation h2, .book-presentation p {
+  width: 650px;
+}
+.book-presentation h2 {
+  font-size: 24px;
+  padding-top: 5px;
+}
+.book-presentation h2 a, .book-presentation h2 .book-author a {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 640px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.book-presentation h2 a:hover {
+  color: #65b2f1;
+}
+.book-presentation .book-info {
+  font-size: 14px;
+  padding-top: 5px;
+}
+.book-presentation .book-info i {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-top: -3px;
+  vertical-align: middle;
+  background-size: 100% 100%;
+  background-image: url("../img/xuanhuan.png");
+  background-repeat: no-repeat;
+}
+.book-presentation .book-info span {
+  color: #596c7c;
+  height: 16px;
+  display: inline-block;
+  line-height: 16px;
+  font-weight: bold;
+}
+.book-presentation .book-info span:nth-child(2) {
+  margin-left: 0px;
+}
+.book-presentation .book-info .info-txt {
+  margin: 0 8px 0;
+  padding: 0 10px 0;
+  border-left: 2px solid #596c7c;
+  border-right: 2px solid #596c7c;
+}
+.book-presentation .desc {
+  font-size: 14px;
+  max-height: 75px;
+  line-height: 15px;
+  padding-top: 8px;
+}
+.book-presentation .book-author {
+  padding-top: 8px;
+}
+.book-presentation .book-author a {
+  color: #596c7c;
+  display: block;
+}
+.book-presentation .book-author a:hover {
+  color: #65b2f1;
+}
+
+.pagin {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.page-list {
+  display: inline-block;
+  text-align: center;
+}
+.page-list li {
+  display: inline-block;
+}
+.page-list li a {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e5e5e5;
+  display: block;
+  transition: all 0.3s ease;
+  line-height: 30px;
+}
+.page-list li a:hover {
+  color: #fff;
+  border: 1px solid #3590de;
+  background: #3590de;
+  transition: all 0.3s ease;
+}
+.page-list li .on {
+  color: #3590de;
+  border: 1px solid #3590de;
+  cursor: default;
+}
+.page-list li .on:hover {
+  color: #3590de;
+  border: 1px solid #3590de;
+  background: #fff;
+}
+.page-list li:first-child a, .page-list li:last-child a {
+  width: 66px;
+}
+.page-list li:first-child a, .page-list li:first-child + li a {
+  margin-right: 10px;
+}
+.page-list li:first-child + li a, .page-list li:nth-last-child(2) a {
+  width: 50px;
+}
+.page-list li:nth-last-child(2) a, .page-list li:last-child a {
+  margin-left: 10px;
+}
+
+#page-form {
+  display: inline-block;
+  margin-left: 10px;
+}
+#page-form input[name="page"] {
+  width: 40px;
+  height: 30px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+}
+#page-form input[name="page"]:focus {
+  border: 1px solid #93c1f9;
+}
+
+.page-submit {
+  color: #000;
+  border: 1px solid #e5e5e5;
+  height: 30px;
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 30px;
+}
+.page-submit:hover {
+  color: #fff;
+  background: #3590de;
+  transition: all 0.3s linear;
+}
+
+/* ================================================================ */
+/*    4// footer                                                    */
+/* ================================================================ */
+.footer .logo-footer {
+  float: left;
+  width: 335px;
+  position: relative;
+  padding-top: 22px;
+  border-bottom: 2px solid #1d3040;
+}
+.footer .logo-footer img {
+  vertical-align: sub;
+}
+.footer .logo-footer .footer-txt {
+  color: #1d3040;
+  font-size: 28px;
+  font-family: "Segoe UI", Arial, "Microsoft Yahei", sans-serif;
+}
+.footer .logo-footer .footer-font {
+  left: 10px;
+  color: #1d3040;
+  bottom: -20px;
+  position: absolute;
+  letter-spacing: 3px;
+}
+.footer .copy-right {
+  width: 602px;
+  float: right;
+  color: #1d3040;
+  padding: 48px 16px 0 16px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+.footer .copy-right p:last-child {
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=more.css.map */

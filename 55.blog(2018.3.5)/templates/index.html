@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+
+{% block main %}
+    <ul class="question-list-group">
+        {% for article in articles %}
+            <li>
+                <div class="avatar-group">
+                    <img src="{{ url_for('static',filename='images/zhiliao.png') }}" alt="" class="avatar">
+                </div>
+                <div class="question-group">
+                    <p class="question-title"><a href="{{ url_for('article_detail',article_id=article.id) }}">{{ article.title }}</a></p>
+                    <p class="question-content">{{ article.content }}</p>
+                    <div class="question-info">
+                        <span class="question-author">{{ article.author.username }}</span>
+                        <span class="question-author">阅读量：{{ article.reading_quantity }}</span>
+                        <span class="question-time">{{ article.create_time }}</span>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,468 @@
+@charset "UTF-8"
+
+$bookBG    : #88caff
+$babyBlue  : #65b2f1
+$navyBlue  : #3590de
+$bookColor : #1d3040
+
+/* ================================================================== */
+/*    1// Default/RestCss*/
+/* ================================================================== */
+
+*
+  margin          : 0
+  padding         : 0
+  font-size       : 100%
+  border          : 0
+  vertical-align  : baseline
+  outline         : 0
+p 
+  margin          : 0
+  padding         : 0
+
+li 
+  list-style-type : none
+
+em,i
+  font-style      : normal
+
+a 
+  color: #333
+  text-decoration : none
+
+html 
+  height          : 100% !important
+  text-overflow   : ellipsis
+
+body 
+  position         : relative
+  font-size        : 14px
+  color            : #FFF
+  background-color : white
+  height           : 100%
+  font-family      : "Microsoft YaHei", Arial, sans-serif
+  min-width        : 1000px
+  overflow         : auto
+
+label
+  cursor           : pointer
+
+.wrap 
+  width        : 100%
+  height       : 100%
+  background   : red
+  
+
+.wrap1000,.wrap890
+  // overflow: hidden
+  width        : 1000px
+  margin-left  : auto
+  margin-right : auto
+  position     : relative
+.wrap890
+  width        : 890px
+
+header
+  background   : $babyBlue
+  height       : 65px
+  position     : relative
+  z-index      : 10
+  overflow     : hidden
+
+section
+  // height       : 2000px
+
+footer
+  height       : 110px
+  background   : #3e3d43
+
+::selection 
+  // background: #fa4659
+  background: $bookBG
+  color: #FFF
+
+::-moz-placeholder
+  color: #E8E4E4
+
+::-ms-input-placeholder
+  color: #E8E4E4
+
+::-webkit-input-placeholder
+  color: #E8E4E4
+
+.full-pic
+  width                 : 100%
+  height                : 200px
+  z-index               : -1
+  position              : absolute
+  background-size       : cover
+  background-image      : url('http://pic23.nipic.com/20120809/8815365_040710591128_2.jpg')
+  background-repeat     : no-repeat
+  background-position   : 0 0
+  // background-attachment : fixed
+
+.main
+  color                 : #333
+
+.mr10
+  margin-right          : 10px
+  
+.btn:hover
+  opacity               : 0.8
+  box-shadow            : 0 2px 8px rgba(0, 0, 0, 0.3)
+
+
+/* ================================================================== */
+/*    2// Header*
+/* ================================================================== */
+.logo
+  display : inline-block
+
+  /* ================================================================ */
+  /*    2.1// Logo
+  /* ================================================================ */
+  a
+    color               : white
+    display             : inline-block
+    font-size           : 20px 
+    line-height         : 65px
+    padding-left        : 58px
+    vertical-align      : middle
+    background-image    : url('../img/head_logo.png')
+    background-repeat   : no-repeat
+    background-position : 0 center
+  
+  /* ================================================================ */
+  /*    2.2// Nav
+  /* ================================================================ */
+.nav
+  margin-left : 80px
+  
+.logo, .nav
+  float       : left
+
+.nav-list li
+  float       : left
+  height      : 65px
+  margin      : 0 12px
+  padding     : 0 12px
+  position    : relative
+  line-height : 65px
+
+  a
+    color              : #000
+    z-index            : 1
+    position           : relative
+    font-size          : 1.2em
+    vertical-align     : middle
+
+    &:hover
+      color            : #000
+      
+    &:hover:after
+      color            : $babyBlue
+      width            : 63px
+      transition       : all 0.2s linear
+      background-color : #fff
+      border-top-left-radius    : 10px
+      border-bottom-left-radius : 10px
+
+    &:hover:before
+      width            : 63px
+      transition       : all 0.2s linear
+      background-color : #fff
+      border-top-right-radius    : 10px
+      border-bottom-right-radius : 10px
+
+    &:after,&:before
+      top              : -7px
+      width            : 59px
+      height           : 38px
+      content          : ""
+      z-index          : 0
+      display          : inline-block
+      position         : absolute
+      transition       : all 0.3s linear
+      background       : #fff
+
+    &:before
+      left             : -9px
+      border-radius    : 8px 0 0 8px
+      transform        : perspective(120px) rotateY(33deg)
+    &:after
+      right            : -8px
+      transform        : perspective(120px) rotateY(-33deg)
+      border-radius    : 0 8px 8px 0
+
+    & span
+      z-index          : 5
+      position         : relative
+
+
+  /* ================================================================ */
+  /*    2.3// Search
+  /* ================================================================ */
+.search
+  float               : right
+  width               : 216px
+  height              : 65px
+  position            : relative
+  padding-top         : 0px
+
+  form
+    position          : relative
+
+    i
+      right           : 188px
+      color           : white
+      bottom          : -50px
+      position        : absolute
+      font-size       : 30px
+      transform       : rotateY(180deg)
+
+    .icon-sear
+      animation       : icon-search-animate 0.9s ease-in-out forwards
+      animation-delay : 0.4s
+
+  input
+    float           : left
+    color           : white
+    width           : 0
+    height          : 50px
+    padding         : 0
+    font-size       : 18px
+    text-align      : center
+    background      : rgba(0, 0, 0, 0)
+    // line-height: 28px
+    margin-right    : 36px
+    border-bottom   : 1px solid white
+
+  .we-on
+    animation: search-on-in 1s ease-in-out forwards
+    animation-delay : 0.5s
+
+
+
+@keyframes search-on-in
+  0%
+    width     : 0
+    padding   : 0
+  100%
+    width     : 160px
+    height    : 20px
+    padding   : 25px 10px 5px 10px
+
+@keyframes icon-search-animate
+  0%
+    right     : 188px
+    bottom    : -50px
+  70%
+    right     : 90px
+    bottom    : -50px
+    transform : rotateY(90deg)
+  100%
+    right     : 0
+    bottom    : -50px
+    font-size : 30px
+    transform : rotateY(0deg)
+
+
+
+/* ================================================================== */
+/*    3// Main
+/* ================================================================== */
+.main-wrap
+  z-index                 : 9
+
+.hot-section
+  padding                 : 50px 0
+  padding-bottom          : 0
+
+  .hot-shadow
+    top                   : 50px
+    left                  : 0
+    width                 : 176px
+    height                : 176px
+    margin                : -10px 0 0 -10px
+    overflow              : hidden
+    position              : absolute
+
+    .hot-title
+      color               : #de5858
+      width               : 250px
+      height              : 84px
+      margin              : 17px 0 0 -68px
+      z-index             : 2
+      font-size           : 36px
+      transform           : rotate(-45deg)
+      text-align          : center
+      line-height         : 84px
+      background-color    : #bee0ff
+    
+    &:before,&:after
+      width               : 10px
+      height              : 10px
+      bottom              : 0px
+      display             : block
+      content             : " "
+      position            : absolute
+      background-color    : #7189aa
+      z-index             : -1
+    &:before
+      left                : 0px
+      bottom              : 0px
+    &:after
+      right               : 0
+      top                 : 0
+
+
+
+  /* ================================================================ */
+  /*    3.1// Hot Section                                             */
+  /* ================================================================ */
+.hot-content
+  padding                : 30px 200px 50px 260px
+  background             : -moz-linear-gradient(top, #fff 200px, #fff 800px)
+  background             : -webkit-gradient(linear,0 0, 100% 100%, from(#fff), to(#fff))
+  background             : -webkit-linear-gradient(top, #fff 200px, #fff 800px)
+  background             : -o-linear-gradient(top, #fff 200px, #fff 800px)
+  border-radius          : 50%
+  padding-bottom         : 50px
+  background-color       : #fff
+  
+  & div:last-child .book-list:last-child
+    border-bottom        : 0
+
+
+
+  /* ================================================================ */
+  /*    3.2// book Title                                              */
+  /* ================================================================ */
+.book-avatar
+  float                    : left
+  width                    : 144px
+  height                   : 192px
+  z-index                  : 20
+  overflow                 : hidden
+  position                 : relative
+  transition               : all 0.3s linear
+  margin-right             : 20px
+  
+  img
+    width                  : 144px
+    height                 : 192px
+    transition             : all 0.3s linear
+
+  &:hover img
+    transform              : scale(1.1)
+    transition             : all 0.3s linear
+    width                  : 144px
+    height                 : 192px
+  
+.book-detail
+  height                   : 192px
+  position                 : relative
+
+  em
+    font-size              : 28px
+
+  span
+    font-weight            : 400
+    font                   : 14px/20px PingFangSC-Regular,'-apple-system',Simsun
+
+  .now-read
+    width                  : 124px
+    color                  : #fff
+    height                 : 42px
+    bottom                 : 0
+    position               : absolute
+    font-size              : 16px
+    background             : #515469
+    text-align             : center
+    transition             : 0.3s
+    line-height            : 42px
+    border-radius          : 5px
+
+.book-tag
+  margin                   : 10px 0 15px 0
+
+.catalog
+  width                    : 990px
+  margin                   : 0 auto
+  overflow                 : hidden
+  min-height               : 500px
+
+  h2
+    color                  : #333
+    // color                    : #515469
+    font-size              : 18px
+    line-height            : 22px
+    border-left            : 4px solid #333
+    padding-left           : 8px
+
+.catalog-list
+  width                    : 1050px
+  margin-top               : 8px
+  border-top               : 1px solid #666
+  
+
+  li
+    float                  : left
+    width                  : 350px
+    line-height            : 40px
+    border-bottom          : 1px solid #e5e5e5
+
+    a
+      font                 : 14px/40px PingFangSC-Regular,'-apple-system',Simsun
+      float                : left
+      overflow             : hidden
+      max-width            : 260px
+      transition           : 0.2s
+      line-height          : 40px
+      white-space          : nowrap
+      text-overflow        : ellipsis
+
+      &:hover
+        // transition         : 0.3
+        color              : #ff4c4c
+
+
+
+/* ================================================================ */
+/*    4// footer                                                    */
+/* ================================================================ */
+.footer
+
+  .logo-footer
+    float                 : left
+    width                 : 335px
+    position              : relative
+    padding-top           : 22px
+    border-bottom         : 2px solid #fff
+
+    img
+      vertical-align      : sub
+
+    .footer-txt
+      color               : #fff
+      font-size           : 28px
+      font-family         : "Segoe UI", Arial, "Microsoft Yahei", sans-serif
+
+    .footer-font
+      left                : 10px
+      color               : #fff
+      bottom              : -20px
+      position            : absolute
+      letter-spacing      : 3px
+
+  .copy-right
+    width                 : 602px
+    float                 : right
+    color                 : #fff
+    padding               : 48px 16px 0 16px
+    font-size             : 10px
+    font-weight           : bold
+    letter-spacing        : 0
+
+    p:last-child
+      font-size           : 12px

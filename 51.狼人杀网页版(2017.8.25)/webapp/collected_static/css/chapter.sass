@@ -1,0 +1,649 @@
+@charset "UTF-8"
+
+
+$bg              : #f5f2de
+
+
+/* ================================================================== */
+/*    1// Default/RestCss*/
+/* ================================================================== */
+*
+  margin          : 0
+  border          : 0
+  padding         : 0
+  outline         : 0
+  font-size       : 100%
+  vertical-align  : baseline
+
+p 
+  margin          : 0
+  padding         : 0
+
+li 
+  list-style-type : none
+
+em,i
+  font-style      : normal
+
+a 
+  color: #333
+  text-decoration : none
+
+html 
+  height          : 100% !important
+  text-overflow   : ellipsis
+
+body 
+  color            : #333
+  height           : 100%
+  position         : relative
+  overflow         : auto
+  font-size        : 14px
+  min-width        : 800px
+  user-select      : none
+  font-family      : PingFangSC-Regular,HelveticaNeue-Light,'Helvetica Neue Light','Microsoft YaHei',sans-serif
+  background-color : #fff
+
+.wrap800
+  // overflow: hidden
+  width        : 800px
+  margin-left  : auto
+  margin-right : auto
+  position     : relative
+  background   : $bg
+
+header
+  background   : rgba(255, 255, 255, 0.67)
+  height       : 60px
+  position     : relative
+  z-index      : 10
+
+section
+  height       : 2000px
+
+::selection 
+  // background: #fa4659
+  background: #9C1BFF
+  color: #FFF
+
+::-moz-placeholder
+  color: #E8E4E4
+
+::-ms-input-placeholder
+  color: #E8E4E4
+
+::-webkit-input-placeholder
+  color: #E8E4E4
+
+.full-pic
+  width                 : 100%
+  height                : 100%
+  z-index               : -1
+  position              : fixed
+  background-size       : cover
+  background-image      : url('http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1309/16/c0/25746851_1379312250560.jpg')
+  background-repeat     : no-repeat
+  background-position   : 0 0
+  background-attachment : fixed
+
+
+.mr10
+  margin-right          : 10px
+
+.btn:hover
+  opacity               : 0.8
+  box-shadow            : 0 2px 8px rgba(0, 0, 0, 0.3)
+
+.wrap990
+  width                 : 990px
+  margin                : 0 auto
+  position              : relative
+
+
+
+
+/* ================================================================== */
+/*    2// Font
+/* ================================================================== */
+@font-face
+  font-family: 'iconfont'  /* project id 266560 */
+  src: url('http://at.alicdn.com/t/font_xkym26an5agfzuxr.eot')
+  src: url('http://at.alicdn.com/t/font_xkym26an5agfzuxr.eot?#iefix') format('embedded-opentype'), url('http://at.alicdn.com/t/font_xkym26an5agfzuxr.woff') format('woff'), url('http://at.alicdn.com/t/font_xkym26an5agfzuxr.ttf') format('truetype'), url('http://at.alicdn.com/t/font_xkym26an5agfzuxr.svg#iconfont') format('svg')
+
+.iconfont
+  font-size        : 18px
+  font-family      : 'iconfont' !important
+
+
+.icon-muluzhuanhuan:before
+  content: "\e600"
+
+.icon-search:before
+  content: "\e714"
+
+.icon-close:before
+  content: "\e60d"
+
+.icon-down:before
+  content: "\e612"
+
+.icon-vip:before
+  content: "\e676"
+
+.icon-top:before
+  content: "\e61e"
+
+.icon-top1:before
+  content: "\e651"
+
+.icon-up8:before
+  content: "\e615"
+
+.icon-close47:before
+  content: "\e605"
+
+.icon-up9:before
+  content: "\e68e"
+
+.icon-catalogue:before
+  content: "\e619"
+
+.icon-down8:before
+  content: "\e7ba"
+
+.icon-mulu:before
+  content: "\e61c"
+
+.icon-down9:before
+  content: "\e659"
+
+.icon-up10:before
+  content: "\e621"
+
+.icon-up3:before
+  content: "\e6fc"
+
+.icon-up:before
+  content: "\e618"
+
+.icon-down1:before
+  content: "\e64e"
+
+.icon-guanbianniu:before
+  content: "\e646"
+
+.icon-close1:before
+  content: "\e610"
+
+.icon-12haoxiangshangjiantou:before
+  content: "\e62c"
+
+.icon-close2:before
+  content: "\e650"
+
+.icon-iconfontvip:before
+  content: "\e639"
+
+.icon-down10:before
+  content: "\e66d"
+
+.icon-up12:before
+  content: "\e616"
+
+.icon-close3:before
+  content: "\e6b6"
+
+.icon-down2:before
+  content: "\ebbb"
+
+.icon-up31:before
+  content: "\e617"
+
+.icon-down-copy:before
+  content: "\e627"
+
+.icon-down3:before
+  content: "\ed26"
+
+.icon-down12:before
+  content: "\e6a1"
+
+.icon-down4:before
+  content: "\e67a"
+
+.icon-close4:before
+  content: "\e63c"
+
+.icon-close5:before
+  content: "\e606"
+
+.icon-icon:before
+  content: "\e64a"
+
+.icon-icon1:before
+  content: "\e64b"
+
+.icon-arrowboldl-copy-copy-copy-copy:before
+  content: "\e634"
+
+.icon-close6:before
+  content: "\e631"
+
+.icon-xiangjiantou:before
+  content: "\e61a"
+
+.icon-top2:before
+  content: "\e851"
+
+.icon-aui-icon-down:before
+  content: "\e61b"
+
+.icon-up4:before
+  content: "\e614"
+
+.icon-down13:before
+  content: "\e68c"
+
+.icon-down14:before
+  content: "\e656"
+
+.icon-close7:before
+  content: "\e62e"
+
+.icon-close8:before
+  content: "\e670"
+
+.icon-top3:before
+  content: "\e6f9"
+
+.icon-down15:before
+  content: "\e6ad"
+
+.icon-up5:before
+  content: "\e60e"
+
+.icon-up13:before
+  content: "\e61f"
+
+.icon-down5:before
+  content: "\e654"
+
+.icon-up1:before
+  content: "\e65d"
+
+.icon-down-copy1:before
+  content: "\e624"
+
+.icon-books:before
+  content: "\e601"
+
+.icon-down6:before
+  content: "\e60c"
+
+.icon-close9:before
+  content: "\e827"
+
+.icon-shu:before
+  content: "\e60f"
+
+.icon-down17:before
+  content: "\e620"
+
+.icon-mulu1:before
+  content: "\e653"
+
+.icon-guanbi:before
+  content: "\e608"
+
+.icon-down18:before
+  content: "\e642"
+
+.icon-close10:before
+  content: "\e609"
+
+.icon-up2:before
+  content: "\e79d"
+
+.icon-down19:before
+  content: "\e63d"
+
+.icon-banneryou:before
+  content: "\e68a"
+
+.icon-bannerzuo:before
+  content: "\e68b"
+
+.icon-down20:before
+  content: "\e890"
+
+.icon-down21:before
+  content: "\e7e8"
+
+.icon-top4:before
+  content: "\e61d"
+
+.icon-top5:before
+  content: "\e607"
+
+.icon-close11:before
+  content: "\e71a"
+
+.icon-close12:before
+  content: "\e60a"
+
+.icon-close13:before
+  content: "\e6b7"
+
+.icon-drop_down:before
+  content: "\e603"
+
+.icon-mulu2:before
+  content: "\e6c5"
+
+.icon-vip1:before
+  content: "\efa6"
+
+.icon-up6:before
+  content: "\e78a"
+
+.icon-shangxia:before
+  content: "\e626"
+
+.icon-arrow:before
+  content: "\e613"
+
+.icon-ziyuan:before
+  content: "\e60b"
+
+.icon-up7:before
+  content: "\e604"
+
+.icon-close14:before
+  content: "\e69d"
+
+.icon-close15:before
+  content: "\e611"
+
+.icon-top6:before
+  content: "\e62d"
+
+.icon-up14:before
+  content: "\e623"
+
+.icon-mulu3:before
+  content: "\e652"
+
+.icon-up15:before
+  content: "\e6a0"
+
+.icon-vip2:before
+  content: "\e678"
+
+.icon-shu-copy-copy:before
+  content: "\e602"
+
+.icon-top7:before
+  content: "\e648"
+
+.icon-icon2:before
+  content: "\e622"
+
+
+
+
+
+
+/* ================================================================== */
+/*    3// Header
+/* ================================================================== */
+.logo
+  float              : left
+
+  a
+    color            : #222
+    width            : 180px
+    height           : 60px
+    display          : block
+    font-size        : 22px
+    background       : url('../img/footer_logo.png') left center
+    line-height      : 60px
+    padding-left     : 63px
+    background-repeat: no-repeat
+
+.right-search
+  float              : right
+
+  input[name="kw"]
+    width            : 130px
+    font-size        : 16px
+    background       : 0
+    transition       : border-width .1s linear
+    text-indent      : 20px
+    padding-bottom   : 2px
+    border-bottom    : 1px solid #d5d5d5
+
+    &:focus
+      background     : 0
+      border-bottom  : 2px solid #bf2c24
+
+  i
+    color            : #000
+    cursor           : pointer
+    font-size        : 20px
+    line-height      : 60px
+
+
+
+/* ================================================================== */
+/*    4// Content
+/* ================================================================== */
+.main-wrap
+  margin-top       : 60px
+
+.content
+  border           : 1px solid rgba(0, 0, 0, .2)
+  padding          : 65px
+  
+  p
+    margin           : 0.8em 0
+    overflow         : hidden
+    font-size        : 18px
+    line-height      : 1.8em
+
+  h2
+    font             : 24px/32px PingFangSC-Regular,HelveticaNeue-Light,'Helvetica Neue Light','Microsoft YaHei',sans-serif
+    height           : 32px
+    margin-bottom    : 30px
+
+    &:first-child
+      font-size: 36px
+      text-align: center
+
+
+  
+.chapter-controll
+  overflow           : hidden
+  margin-top         : 25px
+  margin-bottom      : 25px
+
+  a,span
+    color            : #222
+    display          : inline-block
+    font-size        : 20px
+
+  span
+    height           : 32px
+    border-left      : 1px solid #e5e5e5
+    vertical-align   : middle
+
+  a
+    width            : 266px
+    height           : 70px
+    text-align       : center
+    transition       : background .2s ease
+    line-height      : 70px
+
+    &:hover
+      transition     : background .2s ease
+      background     : #f1f0e6
+
+
+
+/* ================================================================== */
+/*    5// Sidebar
+/* ================================================================== */
+.return
+  left               : 50%
+  width              : 50px
+  height             : 70px
+  bottom             : 0
+  cursor             : pointer
+  border             : 1px solid #e5e5e5
+  display            : none
+  position           : fixed
+  font-size          : 36px
+  background         : $bg
+  text-align         : center
+  line-height        : 70px
+  margin-left        : 410px
+  border-bottom      : 0
+
+  &:hover
+    color            : #bf2c24
+    transition       : color .3s ease
+
+
+
+.dir
+  top                : 121px
+  left               : 50%
+  z-index            : 21
+  position           : fixed
+  margin-left        : -468px
+
+
+  .dir-wrap
+    width            : 58px
+    height           : 48px
+    cursor           : pointer
+    border           : 1px solid #e5e5e5
+    display          : block
+    font-size        : 16px
+    background       : $bg
+    text-align       : center
+    padding-top      : 10px
+
+    &:hover
+      color          : #ed4259
+      transition     : color .3s ease
+
+    p
+      margin         : 2px 0 0 0
+      font-size      : 12px
+
+  .on
+    z-index          : 21
+    position         : relative
+    background       : #fff
+    box-shadow       : -12px 15px 20px rgba(0, 0, 0, 0.3)
+    border-right     : 0
+    padding-right    : 10px
+
+  .dir-content
+    top              : 0px
+    left             : 69px
+    width            : 798px
+    // border           : 1px solid rgba(0, 0, 0, 0.1)
+    z-index          : 20
+    padding          : 40px 0 40px 0
+    position         : absolute
+    overflow         : auto
+    border-top       : 1px solid #e5e5e5
+    box-shadow       : 0 5px 20px rgba(0, 0, 0, 0.2)
+    background       : #fff
+
+    .close
+      top            : 10px
+      width          : 22px
+      right          : 10px
+      color          : #888
+      cursor         : pointer
+      z-index        : 22
+      position       : absolute
+      text-align     : center
+      transition     : transform .3s linear,margin-right .3s linear
+      margin-right   : 0px
+
+      &:hover
+        color        : #000
+        transform    : rotateZ(90deg)
+        transition   : transform .3s linear,margin-right .3s linear
+        margin-right : 1px
+
+    .content-txt
+      color          : #ed4259
+      display        : inline-block
+      font-size      : 18px
+      font-family    : "宋体"
+      font-weight    : 700
+      margin-left    : 25px
+      border-bottom  : 1px solid #ed4259
+      padding-bottom : 5px
+  
+  .title-list
+    overflow         : auto
+    min-height       : 282px
+    max-height       : 360px
+    margin-top       : 20px
+
+    .title-wrap 
+
+      h2
+        height       : 40px
+        cursor       : pointer
+        line-height  : 40px
+
+        span
+          width          : 754px
+          color          : #000
+          height         : 40px
+          display        : block
+          font-size      : 18px
+          line-height    : 40px
+          margin-left    : 25px
+          border-bottom  : 1px solid rgba(0, 0, 0, 0.2)
+
+        .dir-icon
+          float        : right
+          margin-right : 12px
+
+        &:hover
+          background     : rgba(0, 0, 0, 0.05)
+          transition     : background .3s ease
+    
+    .dir-list
+      overflow         : hidden
+      padding-left     : 24px
+      margin-bottom    : 20px
+
+      li
+        width          : 376px
+        float          : left
+        font-size      : 16px
+        line-height    : 40px
+        border-top     : 1px solid #e5e5e5
+
+        &:first-child,&:first-child + li
+          border       : 0
+
+        a
+          float        : left
+          overflow     : hidden
+          max-width    : 80%
+          white-space  : nowrap
+          text-overflow: ellipsis
+
+          &:hover
+            color      : #ed4259
+            transition : color 0.2s ease
+

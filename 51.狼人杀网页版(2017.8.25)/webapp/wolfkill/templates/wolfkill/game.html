@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>{{ room_num }} 号房间 </title>
+
+		<meta name="description" content="User login page" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'font-awesome/4.2.0/css/font-awesome.min.css' %}" />
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="{% static 'fonts/fonts.googleapis.com.css' %}" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="{% static 'css/ace.min.css' %}" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="{% static 'css/ace-part2.min.css' %}" />
+		<![endif]-->
+		<link rel="stylesheet" href="{% static 'css/ace-rtl.min.css' %}" />
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="{% static 'css/ace-ie.min.css' %}" />
+		<![endif]-->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lt IE 9]>
+		<script src="{% static 'js/html5shiv.min.js' %}"></script>
+		<script src="{% static 'js/respond.min.js' %}"></script>
+		<![endif]-->
+	</head>
+
+	<body class="login-layout blur-login">
+		<div class="main-container">
+			<div class="main-content">
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1">
+						<div class="login-container" style="width: 500px">
+							<div class="center">
+									<h1>
+									<span class="white" id="id-text2">狼人杀面杀网页版</span>
+								</h1>
+							</div>
+
+							<div class="space-6"></div>
+
+							<div class="position-relative">
+								<div class="center">
+								<p>
+									<h3><span class="white">你的身份是</span> <span class="green">法官</span></h3>
+								</p>
+									<div class="space-6"></div>
+									<p><h4><span class="white">当前设置：{{ settings.平民 }}平民，{{ settings.狼人 }}狼人，{{ settings.女巫 }}女巫，{{ settings.预言家 }}预言家，{{ settings.猎人 }}猎人</span></h4></p>
+									<div class="space-6"></div>
+									<p><h4><span class="white">请让其他玩家输入房间号码“<span class="green"><strong>{{ room_num }}</strong></span>”来领身份</span></h4></p>
+									<div class="space-6"></div>
+									<p><h4><span class="white">玩家列表</span></h4></p>
+									<div class="space-6"></div>
+									{% for item in player_list %}
+    									<p><h5><span class="white">昵称：{{ item.player }}  角色：{{ item.role }}</span></h5></p>
+    								{% endfor %}
+									<h5><span class="white">你可以点击</span><a class="blue" href="{% url 'wolfkill:create_game' room_num %}">刷新</a><span class="white">来查看已进入玩家身份哟！</span></h5>
+									<form action="{% url 'wolfkill:create_game' room_num=0 %}" method="post">
+										{% csrf_token %}
+										<input type="hidden" name="player_num" value="{{ player_num }}">
+										<input type="hidden" name="status" value="{{ room_num }}">
+										<button type="submit" class=" pull-right btn btn-sm btn-success" ><span class="bigger-110">快点我再来一局嘛，喵~</span></button>
+									</form>
+								</div>
+							</div><!-- /.position-relative -->
+						</div>
+
+					</div><!-- /.col -->
+
+				</div><!-- /.row -->
+				<li class="center"><h5><span class="white" >
+					预言家：每晚可以确认一个人的好坏身份。<br />
+					狼人：杀手，每晚将杀死一个平民。狼人之间互相知道身份。<br />
+					村民：普通平民没有任何特殊功能。目标：白天的时候处决所有的狼人。<br />
+					猎人：当猎人被狼人杀掉或者被平民无辜票死后，他可以向任意一个活着的发射一颗子弹或者选择不开枪。<br />
+					女巫：有两瓶药水。有且只有一瓶解药，可以在当晚救回一个被狼人杀死的死者；有且仅有一瓶毒药，可以杀死任意一个活着的人。<br />
+				</span></h5></li>
+			</div><!-- /.main-content -->
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="{% static 'js/js/jquery.2.1.1.min.js' %}"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="{% static 'js/js/jquery.1.11.1.min.js' %}"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='/static/js/jquery.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='/static/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='/static/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+			jQuery(function($) {
+			 $(document).on('click', '.toolbar a[data-target]', function(e) {
+				e.preventDefault();
+				var target = $(this).data('target');
+				$('.widget-box.visible').removeClass('visible');//hide others
+				$(target).addClass('visible');//show target
+			 });
+			});
+			
+			
+			
+			//you don't need this, just used for changing background
+			jQuery(function($) {
+			 $('#btn-login-dark').on('click', function(e) {
+				$('body').attr('class', 'login-layout');
+				$('#id-text2').attr('class', 'white');
+				$('#id-company-text').attr('class', 'blue');
+				
+				e.preventDefault();
+			 });
+			 $('#btn-login-light').on('click', function(e) {
+				$('body').attr('class', 'login-layout light-login');
+				$('#id-text2').attr('class', 'grey');
+				$('#id-company-text').attr('class', 'blue');
+				
+				e.preventDefault();
+			 });
+			 $('#btn-login-blur').on('click', function(e) {
+				$('body').attr('class', 'login-layout blur-login');
+				$('#id-text2').attr('class', 'white');
+				$('#id-company-text').attr('class', 'light-blue');
+				
+				e.preventDefault();
+			 });
+			 
+			});
+
+
+
+		</script>
+		<div style="text-align:center;">
+
+</div>
+	</body>
+</html>

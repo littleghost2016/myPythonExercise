@@ -1,0 +1,675 @@
+@charset "UTF-8"
+
+// bg
+$bookBG    : #88caff
+$babyBlue  : #65b2f1
+$navyBlue  : #3590de
+$bookColor : #1d3040
+
+// font
+$fonthover : #ed4259
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2017-07-15 16:41:27
+ * @version $Id$
+ */
+
+
+
+
+
+/* ================================================================== */
+/*    1// Default/RestCss*/
+/* ================================================================== */
+*
+  margin          : 0
+  border          : 0
+  padding         : 0
+  outline         : 0
+  font-size       : 100%
+  vertical-align  : baseline
+
+p 
+  margin          : 0
+  padding         : 0
+
+li 
+  list-style-type : none
+
+em,i,cite
+  font-style      : normal
+
+a 
+  color           : #333
+  text-decoration : none
+
+html 
+  height          : 100% !important
+
+body 
+  color            : #333
+  height           : 100%
+  position         : relative
+  overflow         : auto
+  font-size        : 14px
+  min-width        : 1000px
+  font-family      : PingFangSC-Regular,HelveticaNeue-Light,'Helvetica Neue Light','Microsoft YaHei',sans-serif
+  background-color : #fff
+
+header
+  background   : $babyBlue
+  height       : 65px
+  position     : relative
+  z-index      : 10
+  overflow     : hidden
+
+footer
+  height       : 110px
+  background   : #3e3d43
+
+
+label
+  cursor       : pointer
+
+.clear:after
+  clear        : both
+  height       : 0
+  display      : table
+  content      : ""
+  line-height  : 0
+
+.clear:before
+  clear        : both
+  height       : 0
+  content      : ""
+  display      : table
+  line-height  : 0
+
+
+.wrap1000
+  // overflow: hidden
+  width        : 1000px
+  margin-left  : auto
+  margin-right : auto
+  position     : relative
+
+::selection 
+  // background: #9C1BFF
+  // color: #FFF
+
+::-moz-placeholder
+  color: #E8E4E4
+
+::-ms-input-placeholder
+  color: #E8E4E4
+
+::-webkit-input-placeholder
+  color: #E8E4E4
+
+.mr10
+  margin-right          : 10px
+
+.btn
+  cursor                : pointer
+  display               : inline-block
+  transition            : all 0.2s ease
+
+.btn:hover
+  opacity               : 0.8
+  box-shadow            : 0 2px 8px rgba(0, 0, 0, 0.3)
+  transition            : all 0.2s ease
+
+@font-face
+  src                   : url('../font/FZZCYSK.0.15.woff')
+  font-family           : 'FZZCYSK'
+
+.red-kw
+  color                 : #bf2c24
+
+
+
+/* ================================================================== */
+/*    2// Header*
+/* ================================================================== */
+.logo
+  display : inline-block
+
+
+
+  /* ================================================================ */
+  /*    2.1// Logo
+  /* ================================================================ */
+  a
+    color               : white
+    display             : inline-block
+    font-size           : 20px 
+    line-height         : 65px
+    padding-left        : 58px
+    vertical-align      : middle
+    background-image    : url('../img/head_logo.png')
+    background-repeat   : no-repeat
+    background-position : 0 center
+  
+  /* ================================================================ */
+  /*    2.2// Nav
+  /* ================================================================ */
+.nav
+  margin-left : 80px
+  
+.logo, .nav
+  float       : left
+
+.nav-list li
+  float       : left
+  height      : 65px
+  margin      : 0 12px
+  padding     : 0 12px
+  position    : relative
+  line-height : 65px
+
+  a
+    color              : #000
+    z-index            : 1
+    position           : relative
+    font-size          : 1.2em
+    vertical-align     : middle
+
+    &:hover
+      color            : #000
+      
+    &:hover:after
+      color            : $babyBlue
+      width            : 63px
+      transition       : all 0.2s linear
+      background-color : #fff
+      border-top-left-radius    : 10px
+      border-bottom-left-radius : 10px
+
+    &:hover:before
+      width            : 63px
+      transition       : all 0.2s linear
+      background-color : #fff
+      border-top-right-radius    : 10px
+      border-bottom-right-radius : 10px
+
+    &:after,&:before
+      top              : -7px
+      width            : 59px
+      height           : 38px
+      content          : ""
+      z-index          : 0
+      display          : inline-block
+      position         : absolute
+      transition       : all 0.3s linear
+      background       : #fff
+
+    &:before
+      left             : -9px
+      border-radius    : 8px 0 0 8px
+      transform        : perspective(120px) rotateY(33deg)
+    &:after
+      right            : -8px
+      transform        : perspective(120px) rotateY(-33deg)
+      border-radius    : 0 8px 8px 0
+
+    & span
+      z-index          : 5
+      position         : relative
+
+
+
+  /* ================================================================ */
+  /*    2.3// Search
+  /* ================================================================ */
+.search
+  float               : right
+  width               : 216px
+  height              : 65px
+  position            : relative
+  padding-top         : 0px
+
+  form
+    position          : relative
+
+    i
+      right           : 188px
+      color           : white
+      bottom          : -50px
+      position        : absolute
+      font-size       : 30px
+      transform       : rotateY(180deg)
+
+    .icon-sear
+      animation       : icon-search-animate 0.9s ease-in-out forwards
+      animation-delay : 0.4s
+
+  input
+    float           : left
+    color           : white
+    width           : 0
+    height          : 50px
+    padding         : 0
+    font-size       : 18px
+    text-align      : center
+    background      : rgba(0, 0, 0, 0)
+    // line-height: 28px
+    margin-right    : 36px
+    border-bottom   : 1px solid white
+
+  .we-on
+    animation: search-on-in 1s ease-in-out forwards
+    animation-delay : 0.5s
+
+
+
+@keyframes search-on-in
+  0%
+    width     : 0
+    padding   : 0
+  100%
+    width     : 160px
+    height    : 20px
+    padding   : 25px 10px 5px 10px
+
+@keyframes icon-search-animate
+  0%
+    right     : 188px
+    bottom    : -50px
+  70%
+    right     : 90px
+    bottom    : -50px
+    transform : rotateY(90deg)
+  100%
+    right     : 0
+    bottom    : -50px
+    font-size : 30px
+    transform : rotateY(0deg)
+
+
+
+/* ================================================================== */
+/*    3// Main Section
+/* ================================================================== */
+.search-wrap
+  width          : 480px
+  margin         : 0 auto
+  padding        : 30px 0
+
+#search-form
+  input[name="kw"]
+    width          : 370px
+    border         : 1px solid #e5e5e5
+    height         : 38px
+    padding        : 0 14px
+    font-size      : 16px
+    transition     : box-shadow 0.3s ease
+    line-height    : 38px
+    vertical-align : middle
+
+    &:focus
+      z-index      : 21
+      position     : relative
+      // box-shadow   : 0 0 24px 6px #a3d2fb
+      box-shadow   : 0 0 24px 6px #b3b3b3
+      transition   : box-shadow 0.3s ease
+
+  .search-btn
+    font           : 700 20px/40px Simsun
+    color          : #fff
+    width          : 80px
+    height         : 40px
+    display        : inline-block
+    z-index        : 20
+    position       : relative
+    text-align     : center
+    background     : #3e3d43
+    vertical-align : middle
+    border-top-right-radius    : 8px
+    border-bottom-right-radius : 8px
+
+.search-content
+  width            : 220px
+  margin           : 0 auto
+  // display          : none
+  text-align       : center
+
+  .icon-book2
+    color          : #d0d0d0
+    font-size      : 100px
+
+  p
+    font-size      : 16px
+
+.result
+  display          : none
+
+  h2
+    font           : 700 20px/30px Simsun
+    margin-top     : 36px
+    border-bottom  : 1px solid #e5e5e5
+
+
+
+  /* ================================================================ */
+  /*    3.1// Right
+  /* ================================================================ */
+.re-right
+  width            : 216px
+  float            : right
+  background       : #fff
+
+  h2
+    color          : #222
+    font-size      : 18px
+    font-family    : FZZCYSK
+    font-weight    : normal
+    border-bottom  : 1px solid #666
+    padding-bottom : 5px
+    line-height    : 20px
+
+.re-list
+  margin-bottom    : 30px
+
+  li
+    padding        : 15px 0
+    border-bottom  : 1px solid #e5e5e5
+
+    &:last-child:not(:first-child)
+      border       : 0
+    
+    .cover
+      float        : left
+      width        : 72px
+      height       : 96px
+      display      : block
+      overflow     : hidden
+      margin-right : 15px
+      
+      img
+        transition     : transform 0.3s linear
+        vertical-align : middle
+
+      &:hover img
+        transform      : scale(1.1)
+        transition     : transform 0.3s linear
+
+    .rec-wrap
+      height           : 96px
+
+      h3,.rec-author
+        height         : 21px
+        overflow       : hidden
+
+      a
+        font-weight    : normal
+      
+      .rec-title
+        color          : #222
+        font-size      : 16px
+
+        &:hover
+          color        : $fonthover
+          transition   : color 0.2s ease
+      
+      .rec-author 
+        margin-top     : 4px
+
+        a
+          color          : #a5a5a5
+          font-size      : 12px
+          margin-top     : 8px
+        
+          &:hover
+            color        : #222
+            transition   : color 0.2s ease
+
+      .rec-desc
+        height           : 40px
+        overflow         : hidden
+        font-size        : 12px
+        margin-top       : 6px
+        line-height      : 20px
+
+
+.icon-icon-awsauthor
+  vertical-align       : middle
+
+
+
+
+
+
+
+  /* ================================================================ */
+  /*    3.2// Left
+  /* ================================================================ */
+.book-left
+  width            : 720px
+  float            : left
+  margin-top       : 30px
+  // border-left      : 1px solid #e5e5e5
+
+
+
+    /* ============================================================ */
+    /*    3.2.1// Search Result Content
+    /* ============================================================ */
+.result-list
+
+  li
+    height               : 136px
+    padding              : 24px 0
+    position             : relative
+    font-family          : Simsun
+    border-bottom        : 1px solid #e5e5e5
+
+    &:last-child:not(:first-child)
+      border-bottom      : 0
+
+    .about-cover
+      float              : left
+      width              : 102px
+      height             : 136px
+      z-index            : 20
+      position           : relative
+      box-shadow         : 0 0px 10px 0 #aaa
+      margin-right       : 15px
+
+      a
+        width            : 102px
+        height           : 136px
+        display          : block
+        overflow         : hidden
+
+        &:hover img
+          transform      : scale(1.06)
+          transition     : transform 0.3s linear
+
+        img
+          transition     : transform 0.3s linear
+          vertical-align : middle
+
+    .about-info
+      height             : 136px
+      position           : relative
+
+
+.about-title
+  height                 : 30px
+  line-height            : 30px
+  font-weight            : bold
+
+  a
+    font-size            : 18px
+
+    &:hover
+      color              : $fonthover
+      transition         : color 0.2s linear
+
+.about-author
+  height                 : 20px
+  line-height            : 20px
+
+  a,span,i
+    color                : #a5a5a5
+    height               : 14px
+    display              : inline-block
+    font-size            : 12px
+    transition           : color 0.2s linear
+    line-height          : 14px
+
+  .book-classify
+    margin               : 0 6px
+    padding              : 0 10px
+    border-left          : 1px solid #e5e5e5
+    border-right         : 1px solid #e5e5e5
+  
+  .author-link:hover
+    color                : #222
+
+$about-list : (author-link: 0, book-classify: 1)
+@each $key, $val in $about-list
+  .#{$key}:hover
+    @if $val
+      color: $fonthover
+    @else
+      color: #222
+
+.about-desc
+
+  p
+    color                : #6a6a6a
+    height               : 48px
+    overflow             : hidden
+    margin-top           : 4px
+    line-height          : 24px
+    margin-right         : 150px
+
+.detail-btn
+  color                  : #fff
+  width                  : 100px
+  right                  : 0
+  bottom                 : 0
+  height                 : 34px
+  display                : block
+  position               : absolute
+  background             : #3e3d43
+  text-align             : center
+  line-height            : 34px
+
+.date
+  color                  : #adadad
+  font-size              : 12px
+  margin-top             : 10px
+
+
+    /* ============================================================ */
+    /*    3.2.2// Page
+    /* ============================================================ */
+.paging
+  padding                : 40px 0px
+  text-align             : right
+
+  .page-list
+    display              : inline-block
+
+    li
+      display            : inline-block
+      margin-right       : 6px
+      
+      a
+        height           : 22px
+        border           : 1px solid #fff
+        display          : block
+        padding          : 0 7px
+        text-align       : center
+        transition       : border 0.3s linear
+        line-height      : 22px
+      
+        &:hover
+          border         : 1px solid #ed4259
+          transition     : border 0.3s linear
+
+      .on
+        color            : #fff
+        background       : #ed4259
+        border           : 1px solid #ed4259
+
+#page
+  user-select            : none
+  display                : inline-block
+  
+  input[name="page"]
+    width                : 40px
+    border               : 1px solid #e5e5e5
+    height               : 22px
+    text-align           : center
+    line-height          : 22px
+    margin-right         : 10px
+    
+    &:focus
+      border             : 1px solid #bbdaff
+
+  .page-submit
+    width                : 34px
+    height               : 22px
+    cursor               : pointer
+    border               : 1px solid #e5e5e5
+    display              : inline-block
+    font-size            : 12px
+    text-align           : center
+    line-height          : 22px
+
+    &:hover
+      color              : #ed4259
+      border             : 1px solid #ed4259
+      transition         : border 0.5s linear, color 0.5s linear
+
+
+
+/* ================================================================ */
+/*    4// footer                                                    */
+/* ================================================================ */
+.footer
+  color                   : #fff
+
+  .logo-footer
+    float                 : left
+    width                 : 335px
+    position              : relative
+    padding-top           : 22px
+    // border-bottom         : 2px solid $bookColor
+    border-bottom         : 2px solid #fff
+
+    img
+      vertical-align      : sub
+
+    .footer-txt
+      // color               : $bookColor
+      color               : #fff
+      font-size           : 28px
+      font-family         : "Segoe UI", Arial, "Microsoft Yahei", sans-serif
+
+    .footer-font
+      left                : 10px
+      // color               : $bookColor
+      color               : #fff
+      bottom              : -20px
+      position            : absolute
+      letter-spacing      : 3px
+
+  .copy-right
+    width                 : 602px
+    float                 : right
+    // color                 : $bookColor
+    color                 : #fff
+    padding               : 48px 16px 0 16px
+    font-size             : 10px
+    font-weight           : bold
+    letter-spacing        : 0
+
+    p:last-child
+      font-size           : 12px
+
