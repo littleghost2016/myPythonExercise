@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+    <h3>以下是发送结果</h3>
+    <h5>发送者ip地址和端口： {{ result.sender_ip }}</h5><br />
+    <h5>接收者ip地址和端口： {{ result.receiver_ip }}</h5><br />
+    <h5>{{ result.thread_number }}</h5><br />
+    <a href="{{ url_for('index')}}">返回发送页面</a>
+</body>
+</html>

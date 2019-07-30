@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <img src="{{ avater|default('http://edu-image.nosdn.127.net/2A44B50E3B808A16B726EAA79B5EA5DE.png?imageView&thumbnail=223y124&quality=100') }}" alt="">
+</head>
+<body>
+    <img src="{{ url_for('static',filename='images/'+file_name) }}" alt="">
+</body>
+</html>
